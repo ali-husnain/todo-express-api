@@ -1,5 +1,5 @@
-const enviroment = process.env.NODE_ENV || 'production';
-const config = require("../config/db.config.js")[enviroment];
+const enviroment = process.env.NODE_ENV || 'development';
+const config = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 let sequelize;
 if (enviroment == 'development') {
@@ -20,7 +20,7 @@ if (enviroment == 'development') {
         logging: config.logging,
     });
 } else {
-    sequelize = new Sequelize(config.use_env_variable, {
+    sequelize = new Sequelize(process.env.DATABASE_URL, {
         dialectOptions: {
         ssl: {
             require: true,
