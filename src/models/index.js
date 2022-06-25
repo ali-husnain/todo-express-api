@@ -1,22 +1,34 @@
-const config = require("../config/db.config.js");
+const enviroment = process.env.NODE_ENV || 'production';
+const config = require("../config/db.config.js")[enviroment];
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-  config.DB,
-  config.USER,
-  config.PASSWORD,
-  {
-    host: config.HOST,
-    dialect: config.dialect,
-    //operatorsAliases: false,
-    pool: {
-      max: config.pool.max,
-      min: config.pool.min,
-      acquire: config.pool.acquire,
-      idle: config.pool.idle
-    },
-    logging: config.logging,
-  }
-);
+let sequelize;
+if (enviroment == 'development') {
+    sequelize = new Sequelize(
+    config.DB,
+    config.USER,
+    config.PASSWORD,
+    {
+        host: config.HOST,
+        dialect: config.dialect,
+        //operatorsAliases: false,
+        pool: {
+        max: config.pool.max,
+        min: config.pool.min,
+        acquire: config.pool.acquire,
+        idle: config.pool.idle
+        },
+        logging: config.logging,
+    });
+} else {
+    sequelize = new Sequelize(config.use_env_variable, {
+        dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+        }
+    });
+}
 
 const db = {};
 db.Sequelize = Sequelize;
