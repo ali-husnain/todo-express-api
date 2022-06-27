@@ -19,7 +19,7 @@ exports.overAllProgress = async (req, res) => {
   const completed = allTasks.filter((task) => task.is_completed==1);
   const progress = (completed.length / allTasks.length) * 100;
   const data = {
-    percentage: progress,
+    percentage: Math.round(progress),
     inprogress: inprogress,
     completed: completed
   }
@@ -34,7 +34,7 @@ exports.taskProgressByRange = async (req, res) => {
   const completed = allTasks.filter((task) => task.is_completed==1);
   const progress = (completed.length / allTasks.length) * 100;
   const data = {
-    percentage: progress,
+    percentage: Math.round(progress),
     inprogress: inprogress,
     completed: completed
   }
