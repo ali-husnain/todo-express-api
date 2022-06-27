@@ -17,7 +17,7 @@ exports.overAllProgress = async (req, res) => {
   const allTasks = await taskService.findAllByUser(req.userId);
    const inprogress = allTasks.filter((task) => task.is_completed==0);
   const completed = allTasks.filter((task) => task.is_completed==1);
-  const progress = (completed.length / inprogress.length) * 100;
+  const progress = (completed.length / allTasks.length) * 100;
   const data = {
     percentage: progress,
     inprogress: inprogress,
@@ -32,7 +32,7 @@ exports.taskProgressByRange = async (req, res) => {
   const allTasks = await taskService.findAllByUserAndRange(req.userId, start_date, end_date);
   const inprogress = allTasks.filter((task) => task.is_completed==0);
   const completed = allTasks.filter((task) => task.is_completed==1);
-  const progress = (completed.length / inprogress.length) * 100;
+  const progress = (completed.length / allTasks.length) * 100;
   const data = {
     percentage: progress,
     inprogress: inprogress,
