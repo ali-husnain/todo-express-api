@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "b770ffbc-dce3-4b9b-b0b0-356f72ad19cc",
+		"name": "todo-with-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"warraich\",\r\n    \"email\": \"warraich@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"warraich\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/user/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjU2MTQzMTU4LCJleHAiOjE2NTYyMjk1NTh9.WkZSKmRUI4FnybB4Iae4Bvfy4bSG_jdhJI2g6jAtb_M",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete/43534",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete",
+						"43534"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All  Task Per Page 10",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/task/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"seventh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Over All Progress",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/task/progress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"progress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Complete",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task/markcomplete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"markcomplete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/task/view/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"view",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks Progress By Range",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"start_date\": \"2022-06-25\",\r\n    \"end_date\": \"2022-06-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task/progressbyrange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"progressbyrange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MTUyOTAzLCJleHAiOjE2NTYyMzkzMDN9.EGX2fh43MplG89iIuYRavu_DcLxIof5t2pqSugqncpM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"first\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
