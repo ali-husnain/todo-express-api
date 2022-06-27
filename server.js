@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 let corsOptions = {
-  origin: "https://todo-react-app-flax.vercel.app"
+  origin: "*"
 };
 
 app.use(cors(corsOptions));
