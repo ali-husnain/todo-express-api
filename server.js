@@ -12,10 +12,10 @@ app.use(function(req, res, next) {
 });
 
 let corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "https://todo-react-app-flax.vercel.app"
 };
 
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 
 app.use(bodyParser.json());
