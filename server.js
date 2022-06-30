@@ -31,12 +31,14 @@ require('./src/routes/user.routes')(app);
 require('./src/routes/task.routes')(app);
 
 const db = require("./src/models");
-//db.sequelize.sync(); //for production
-const roleSeeder = require("./src/seeder/role");
-db.sequelize.sync({force: true}).then(() => {
-    console.log('Drop and Resync Db');
-    roleSeeder();
-});
+db.sequelize.sync(); //for production
+
+//use this if you want to reset database
+// const roleSeeder = require("./src/seeder/role");
+// db.sequelize.sync({force: true}).then(() => {
+//     console.log('Drop and Resync Db');
+//     roleSeeder();
+// });
     
 
 //error handling
